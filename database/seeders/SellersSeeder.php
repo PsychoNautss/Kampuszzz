@@ -1,0 +1,50 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class SellersSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // Create seller profiles for the seeded users with role 'Penjual'
+        DB::table('sellers')->insert([
+            [
+                'user_id' => 2,
+                'shop_name' => 'Toko Radit',
+                'shop_description' => 'Pilihan batik modern dan tradisional.',
+                'phone' => '082345678901',
+                'address' => 'Jl. Batik No.2',
+                'is_active' => true,
+                'region_id' => 1,
+                'created_at' => now(),
+            ],
+            [
+                'user_id' => 3,
+                'shop_name' => 'Toko Noval',
+                'shop_description' => 'Perhiasan dan aksesoris handmade.',
+                'phone' => '083456789012',
+                'address' => 'Jl. Gelang No.3',
+                'is_active' => true,
+                'region_id' => 2,
+                'created_at' => now(),
+            ],
+            [
+                'user_id' => 4,
+                'shop_name' => 'Toko Raja',
+                'shop_description' => 'Alat tulis dan kebutuhan kantor.',
+                'phone' => '084567890123',
+                'address' => 'Jl. Kertas No.4',
+                'is_active' => true,
+                'region_id' => 3,
+                'created_at' => now(),
+            ],
+        ]);
+    }
+}
